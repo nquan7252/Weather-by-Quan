@@ -57,8 +57,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <video id="background-vid" autoPlay muted loop>
-          <source src={this.getVideoSrc} type='video/mp4' />
+        <video id="background-vid" autoPlay muted loop src={this.getVideoSrc()}>
+          
         </video>
         <NavBar getNew={this.handleSubmit} data={cities}></NavBar>
         <TempDisplay city={this.state.currentCity} data={this.state.data}></TempDisplay>
@@ -66,8 +66,14 @@ class App extends React.Component {
       </div>
     );
   }
+
   getVideoSrc = () => {
-    if (this.state.data==null) return vid;
+    if (this.state.data==null) 
+    {
+    console.log('checked null')
+    return vid;
+    }
+    else{
     switch (this.state.data.current.weather[0].icon) {
       case '01d':
       case '02d':
@@ -86,12 +92,16 @@ class App extends React.Component {
       case '10d':
         return raind;
       case '9d':
+      case '9n':
+      case '10n':
         return rainn;
       case '11d':
+      case '11n':
         return thunderstorm;
       default:
         return vid;
     }
+  }
   }
   getData = () => {
     return this.state.data == null ? '' : this.state.data
