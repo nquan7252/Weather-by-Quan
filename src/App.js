@@ -67,6 +67,7 @@ class App extends React.Component {
     );
   }
   getVideoSrc = () => {
+    if (this.state.data==null) return vid;
     switch (this.state.data.current.weather[0].icon) {
       case '01d':
       case '02d':
