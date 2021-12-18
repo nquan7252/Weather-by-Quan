@@ -10,7 +10,7 @@ class TempDisplay extends React.Component {
                      <span className='city'>{this.getLocation()}</span>
                  </div>
 
-                 <span>{this.getTemp()} <sup> °C</sup></span>
+                 <span>{this.getTemp()+"°C"}</span>
              </div>
              <span className='meta-container'><Detail data={this.props.data}></Detail></span>
              </div>)
