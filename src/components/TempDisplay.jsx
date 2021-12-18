@@ -1,36 +1,38 @@
 import React, { Component } from 'react';
 import Detail from './Detail';
 class TempDisplay extends React.Component {
-    render() { 
+    render() {
         return (<div className='info-container'>
-             <div className='temp-container'>
-        
-                 <div className='location-container'>
-                     
-                     {/* <img className='icon'src={require('../assets/location.png')}></img> */}
-                     {this.getLocation()}
-                 </div>
-               
-                 <span>{this.getTemp()}</span>
-             </div>
-             <span className='meta-container'><Detail data={this.props.data}></Detail></span>
-            </div>)
-        ;
+            <div className='big-temp-container'>
+            <div className='temp-container'>
+
+                <div className='location-container'>
+
+                    {/* <img className='icon'src={require('../assets/location.png')}></img> */}
+                    {this.getLocation()}
+                </div>
+
+                <span>{this.getTemp()}</span>
+            </div>
+            </div>
+            <span className='meta-container'><Detail data={this.props.data}></Detail></span>
+        </div>)
+            ;
     }
-    getTemp=()=>{
+    getTemp = () => {
         console.log(this.props.data);
-        return this.props.data==null? '':
-        <span>
-            {this.props.data.current.temp}<sup>°C</sup>
-        </span>;
+        return this.props.data == null ? '' :
+            <span>
+                {this.props.data.current.temp}<sup>°C</sup>
+            </span>;
     }
-    getLocation=()=>{
-        return this.props.data==null?'':
-        <div>
-             <img className='icon'src={require('../assets/location.png')}></img>
-            <span>{this.props.city}</span>
-        </div>
+    getLocation = () => {
+        return this.props.data == null ? '' :
+            <div className='location-container'>
+                <img className='icon' src={require('../assets/location.png')}></img>
+                <span>{this.props.city}</span>
+            </div>
     }
 }
- 
+
 export default TempDisplay;
