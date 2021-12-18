@@ -12,7 +12,7 @@ class TempDisplay extends React.Component {
                     {this.getLocation()}
                 </div>
 
-                <span>{this.getTemp()}</span>
+                <span  className='temp-display'>{this.getTemp()}</span>
             </div>
             </div>
             <span className='meta-container'><Detail data={this.props.data}></Detail></span>
@@ -22,7 +22,7 @@ class TempDisplay extends React.Component {
     getTemp = () => {
         console.log(this.props.data);
         return this.props.data == null ? '' :
-            <span className='temp-display'>
+            <span>
                 {this.props.data.current.temp}<sup>°C</sup>
             </span>;
     }
