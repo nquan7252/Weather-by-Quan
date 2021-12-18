@@ -14,19 +14,19 @@ class TempDisplay extends React.Component {
                  <span>{this.getTemp()}</span>
              </div>
              <span className='meta-container'><Detail data={this.props.data}></Detail></span>
-             </div>)
+            </div>)
         ;
     }
     getTemp=()=>{
         console.log(this.props.data);
-        return this.props.data==null? '':
-        <div className='location-container'>
-            <img className='icon'src={require('../assets/location.png')}></img>
-            <span className='city'>{this.props.data.current.temp+"°C"}</span>;
-        </div>
+        return this.props.data==null? '':this.props.data.current.temp+"°C";
     }
     getLocation=()=>{
-        return this.props.data==null?'':this.props.city;
+        return this.props.data==null?'':
+        <div>
+             <img className='icon'src={require('../assets/location.png')}></img>
+            <span>this.props.city</span>
+        </div>
     }
 }
  
