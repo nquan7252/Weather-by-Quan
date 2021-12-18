@@ -19,13 +19,16 @@ class TempDisplay extends React.Component {
     }
     getTemp=()=>{
         console.log(this.props.data);
-        return this.props.data==null? '':this.props.data.current.temp+"°C";
+        return this.props.data==null? '':
+        <span>
+            {this.props.data.current.temp}<sup>°C</sup>
+        </span>;
     }
     getLocation=()=>{
         return this.props.data==null?'':
         <div>
              <img className='icon'src={require('../assets/location.png')}></img>
-            <span>this.props.city</span>
+            <span>{this.props.city}</span>
         </div>
     }
 }
