@@ -22,7 +22,7 @@ class TempDisplay extends React.Component {
     getTemp = () => {
         console.log(this.props.data);
         return this.props.data == null ? '' :
-            <span>
+            <span className='temp-display'>
                 {this.props.data.current.temp}<sup>°C</sup>
             </span>;
     }
