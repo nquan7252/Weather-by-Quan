@@ -57,7 +57,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <video id="background-vid" autoPlay muted loop src={this.getVideoSrc()}>
+        <video id="background-vid" autoPlay muted playsinline loop src={this.getVideoSrc()}>
           
         </video>
         <NavBar getNew={this.handleSubmit} data={cities}></NavBar>
