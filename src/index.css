@@ -30,7 +30,7 @@ code {
   top:50%;
   object-fit: cover;
   z-index: -1;
-  transform:translate(-50%,-50%) rotateX(180deg);
+  transform:translate(-50%,-50%) rotateY(180deg);
 
   
 }
