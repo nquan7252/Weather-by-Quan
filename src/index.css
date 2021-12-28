@@ -29,9 +29,9 @@ code {
   left:50%;
   top:50%;
   object-fit: cover;
-  transform:translate(-50%,-50%);
   z-index: -1;
   transform: rotateY(180deg);
+  transform:translate(-50%,-50%);
   -webkit-transform: rotateY(180deg);
 }
 #input::placeholder{
